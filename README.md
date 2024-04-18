@@ -38,3 +38,13 @@ Before you start, make sure you have the an account on any of the following Clou
 [9. Implementing Wordpress Website with LVM Storage Management](./9-Implementing-Wordpress-Website-with-LVM-Storage-Management/)
 
 [10. Ansible Automation Project](./10-Ansible-Automation-Project/)
+
+[11. Ansible Refactoring Assignments & Imports](./11-Ansible-Refactoring-Assignments-and-Imports/)
+
+[12. Ansible Dynamic Assignments & Community Roles](./12-Ansible-Dynamic-Assignments-and-Community-Roles/)
+
+[13. Understanding IP Addresses & CIDR Notation](./13-Understanding-IP-Addresses-and-CIDR-Notation/)
+
+[14. AWS Networking Implementation (VPC, Subnets, Internet Gateway, NAT & Routing)](./14-AWS%20Networking%20Implementation%20(VPC,%20Subnets,%20Internet%20Gateway,%20NAT%20&%20Routing)/)
+
+[15. Automating AWS with IaC using Terraform](./15-Automating-AWS-Infrastructure-with-IaC-using-Terraform/)
