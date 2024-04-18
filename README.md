@@ -52,3 +52,5 @@ Before you start, make sure you have the an account on any of the following Clou
 [15. Automating AWS with IaC using Terraform](./15-Automating-AWS-Infrastructure-with-IaC-using-Terraform/)
 
 [16. Implementing CICD Pipeline for Terraform using Jenkins](./16-Implementing-CICD-Pipeline-for-Terraform-using-Jenkins/)
+
+[17. Monitoring Infrastructure in AWS](./17-Monitoring-Infrastructure-in-AWS/)
