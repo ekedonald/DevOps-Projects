@@ -20,3 +20,13 @@ Before you start, make sure you have the an account on any of the following Clou
 
 ## List of the Projects
 [1. LInux Practice Projects](./1-Linux-Practice-Project)
+
+[2. Shell Scripting](./2-Shell-Scripting/)
+
+[3. LAMP Stack Implementation](./3-LAMP-Stack-Implementation-In-AWS/)
+
+[4. LEMP Stack Implementation](./4-LEMP-Stack-Implementation-On-AWS/)
+
+[5. Client-Server Architecture using MySQL](./5-Client-Server-Architecture-using-MySQL-DBMS/)
+
+
