@@ -19,23 +19,23 @@ Before you start, make sure you have the an account on any of the following Clou
 * GCP
 
 ## List of the Projects
-[1. LInux Practice Projects](./1-Linux-Practice-Project)
+[1. LInux Practice Projects](./01-Linux-Practice-Project)
 
-[2. Shell Scripting](./2-Shell-Scripting/)
+[2. Shell Scripting](./02-Shell-Scripting/)
 
-[3. LAMP Stack Implementation](./3-LAMP-Stack-Implementation-In-AWS/)
+[3. LAMP Stack Implementation](./03-LAMP-Stack-Implementation-In-AWS/)
 
-[4. LEMP Stack Implementation](./4-LEMP-Stack-Implementation-On-AWS/)
+[4. LEMP Stack Implementation](./04-LEMP-Stack-Implementation-On-AWS/)
 
-[5. Client-Server Architecture using MySQL](./5-Client-Server-Architecture-using-MySQL-DBMS/)
+[5. Client-Server Architecture using MySQL](./05-Client-Server-Architecture-using-MySQL-DBMS/)
 
-[6. Implementing Load Balancing with Nginx](./6-Implementing-Load-Balancing-with-Nginx/)
+[6. Implementing Load Balancing with Nginx](./06-Implementing-Load-Balancing-with-Nginx/)
 
-[7. Automating Load Balancer Configuration with Shell Scripting](./7-Automating-Load-Balancer-Configuration-with-Shell-Scripting/)
+[7. Automating Load Balancer Configuration with Shell Scripting](./07-Automating-Load-Balancer-Configuration-with-Shell-Scripting/)
 
-[8. DevOps Tooling Website Solution](./8-DevOps-Tooling-Website-Solution/)
+[8. DevOps Tooling Website Solution](./08-DevOps-Tooling-Website-Solution/)
 
-[9. Implementing Wordpress Website with LVM Storage Management](./9-Implementing-Wordpress-Website-with-LVM-Storage-Management/)
+[9. Implementing Wordpress Website with LVM Storage Management](./09-Implementing-Wordpress-Website-with-LVM-Storage-Management/)
 
 [10. Ansible Automation Project](./10-Ansible-Automation-Project/)
 
