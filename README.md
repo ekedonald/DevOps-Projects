@@ -50,3 +50,5 @@ Before you start, make sure you have the an account on any of the following Clou
 [14. AWS Networking Implementation (VPC, Subnets, Internet Gateway, NAT & Routing)](./14-AWS%20Networking%20Implementation%20(VPC,%20Subnets,%20Internet%20Gateway,%20NAT%20&%20Routing)/)
 
 [15. Automating AWS with IaC using Terraform](./15-Automating-AWS-Infrastructure-with-IaC-using-Terraform/)
+
+[16. Implementing CICD Pipeline for Terraform using Jenkins](./16-Implementing-CICD-Pipeline-for-Terraform-using-Jenkins/)
