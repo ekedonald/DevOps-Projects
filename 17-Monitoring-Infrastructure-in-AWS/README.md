@@ -4,9 +4,9 @@ Monitoring refers to the process of observing and collecting data about the perf
 ## AWS CloudWatch and CloudTrail
 AWS CloudWatch is a monitoring and observabality service provided by Amazon Web Services (AWS). It allows users to collect and track metrics, monitor logs, set alarms and automatically react to changes in AWS resources and applications running on the AWS infrastructure. 
 
-CloudWatch provides insights into the performance, health and operational status of AWS resources and applications helping users to troubleshoot issues, optimise resource utilisation and ensure the reliability of their systems.
+CloudWatch provides insights into the performance, health and operational status of AWS resources and applications helping users to troubleshoot issues, optimize resource utilization and ensure the reliability of their systems.
 
-AWS CloudTrail enables governance, compliance, operational auditing and risk auditing of your AWS account.CloudTrail records and logs all API activity in your AWS account providing a comprehensive trail of events that can be used for security analysis, resource change tracking, troubleshooting and compliance auditing.
+AWS CloudTrail enables governance, compliance, operational auditing and risk auditing of your AWS account. CloudTrail records and logs all API activity in your AWS account providing a comprehensive trail of events that can be used for security analysis, resource change tracking, troubleshooting and compliance auditing.
 
 ## CloudWatch Metrics and Alarms
 Amazon CloudWatch Metrics and Alarms are essential components of the Amazon CloudWatch service which provides monitoring and observability capabilities for AWS resources and applications. Let's delve into each of these concepts:
@@ -22,7 +22,7 @@ Key aspects of CloudWatch Metrics include:
 
 **Default and Custom Metrics**: AWS services automatically publish default metrics to CloudWatch, such as CPU utilisation, network traffic, and disk 1/O for EC2 instances. Additionally, users can create custom metrics to monitor specific aspects of their applications or services.
 
-**Namespace and Dimensions**: Metrics are organised into namespaces, which categorise related metrics together. Within each namespace, metrics can have dimensions that further specify the resource or aspect being monitored. For example, an EC2 instance metric might have dimensions such as **Instanceld** or **InstanceType**.
+**Namespace and Dimensions**: Metrics are organised into namespaces which categorize related metrics together. Within each namespace, metrics can have dimensions that further specify the resource or aspect being monitored. For example, an EC2 instance metric might have dimensions such as **Instanceld** or **InstanceType**.
 
 **Timestamps and Units**: Each metric data point includes a timestamp indicating when the measurement was taken, as well as a unit specifying the measurement's scale (e.g. bytes, percentage, seconds).
 
@@ -37,7 +37,7 @@ CloudWatch Alarms allow users to define thresholds on CloudWatch Metrics and tri
 
 Key aspects of CloudWatch Alarms include:
 
-**Thresholds and Actions**: Users can set thresholds on CloudWatch Metrics, specifying conditions that, when met or exceeded, trigger alarm states. When an alarm enters an alarm state, users can configure actions such as sending notifications via Amazon SNS, executing AWS Lambda functions, or auto-scaling resources.
+**Thresholds and Actions**: Users can set thresholds on CloudWatch Metrics, specifying conditions that, when met or exceeded, trigger alarm states. When an alarm enters an alarm state, users can configure actions such as sending notifications via Amazon SNS, executing AWS Lambda functions or auto-scaling resources.
 
 **Alarm States**: CloudWatch Alarms have three possible states: OK, INSUFFICIENT_DATA, and ALARM. The OK state indicates that the metric is within the defined threshold, while the ALARM state indicates that the threshold has been breached. The INSUFFICIENT DATA state occurs when there is not enough data to evaluate the alarm.
 
