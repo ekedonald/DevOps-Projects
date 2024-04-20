@@ -1,0 +1,9 @@
+bootstrap/cache/*
+
+.idea
+.git*
+storage/framework/cache/*
+storage/framework/session/*
+storage/framework/views/*
+storage/logs/*
+storage/app/*
