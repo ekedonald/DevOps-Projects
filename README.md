@@ -56,3 +56,7 @@ Before you start, make sure you have the an account on any of the following Clou
 [16. Implementing CICD Pipeline for Terraform using Jenkins](./16-Implementing-CICD-Pipeline-for-Terraform-using-Jenkins/)
 
 [17. Monitoring Infrastructure in AWS](./17-Monitoring-Infrastructure-in-AWS/)
+
+[18. Migration to the Сloud with Containerization](./18-Migration-to-the-Сloud-with-Containerization/)
+
+[19. Deploying Applications Into Kubernetes Cluster](./19-Deploying-Applications-Into-Kubernetes-Cluster/)
