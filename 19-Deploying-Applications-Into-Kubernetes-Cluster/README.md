@@ -6,7 +6,7 @@ Kuberentes has a lot of resources abd capablities that it is not realistic to le
 * ReplicaSets
 * Deployments
 * StatefulSets
-* Services (ClusterIP, NodeIP, Loadbalancer)
+* Services (ClusterIP, NodePort, Loadbalancer)
 
 ## Getting Started
 1. Spin up EC2 Instance on AWS (i.e. used to create the cluster).
