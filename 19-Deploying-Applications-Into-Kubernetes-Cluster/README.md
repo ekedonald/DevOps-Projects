@@ -297,7 +297,7 @@ kubectl  port-forward svc/nginx-service 8089:80
 
 ![port forward svc/nginx-service](./images/3%20port-forward%20service.png)
 
-12. Then go to your vm and enter `curl localhost:8089`, you should now be able to see the nginx page.
+12. Then go to your vm, open another window and enter `curl localhost:8089`, you should now be able to see the nginx page.
 
 ![curl localhost:8089](./images/3%20curl%20localhost_8089.png)
 
@@ -311,7 +311,7 @@ kubectl get service nginx-service -o wide
 
 ![get service nginx-service -o wide](./images/3%20get%20service%20-o%20wide.png)
 
-As you already know, the service's type is ClusterIP, and in the above output, it has the IP address of `10.100.240.135` - This IP works just like an internal loadbalancer. It accepts requests and forwards it to an IP address of any Pod that has the respective selector label. In this case, it is `app=nginx-pod`. 
+As you already know, the service's type is ClusterIP, and in the above output, it has the IP address of `10.100.240.135`. This IP works just like an internal loadbalancer. It accepts requests and forwards it to an IP address of any Pod that has the respective selector label. In this case, it is `app=nginx-pod`. 
 
 If there is more than one Pod with that label, service will distribute the traffic to all theese pods in a [Round Robin](https://en.wikipedia.org/wiki/Round-robin_scheduling) fashion.
 
@@ -333,7 +333,7 @@ Therefore, Service with IP `10.100.240.135` takes request and forwards to Pod wi
 
 ### Step 3: Expose a Service on a Server's Public IP Address & Static Port
 
-Sometimes, it may be needed to directly access the application using the public IP of the server (when we speak of a K8s cluster we can replace 'server' with 'node') the Pod is running on. This is when the [NodePort](https://kubernetes.io/docs/concepts/services-networking/service/#nodeport) service type comes in handy.
+Sometimes, it may be needed to directly access the application using the public IP of the server (when we speak of a K8s cluster we can replace **server** with **node**) the Pod is running on. This is when the [NodePort](https://kubernetes.io/docs/concepts/services-networking/service/#nodeport) service type comes in handy.
 
 A **NodePort** service type exposes the service on a static port on the node's IP address. NodePorts are in the `30000-32767` range by default, which means a NodePort is unlikely to match a service’s intended port (for example, 80 may be exposed as 30080).
 
@@ -365,7 +365,7 @@ What has changed is:
 
 ![update security group of nodegroup](./images/4%20update%20security%20group%20of%20nodegroup.png)
 
-3. Get the public IP address of the node the Pod is running on, append the nodeport.
+3. Get the public IP address of the node the Pod is running on, append the NodePort.
 
 ```sh
 kubectl get nodes -o wide
@@ -382,9 +382,9 @@ node_external_ip:30080
 ![node-ip_30080](./images/4%20node_ip_30080.png)
 
 **How Kubernetes ensures desired number of Pods is always running?**
-When we define a Pod manifest and appy it - we create a Pod that is running until it's terminated for some reason (e.g., error, Node reboot or some other reason), but what if we want to declare that we always need at least 3 replicas of the same Pod running at all times? 
+When we define a Pod manifest and apply it, we create a Pod that is running until it's terminated for some reason (e.g. error, Node reboot or some other reason), but what if we want to declare that we always need at least 3 replicas of the same Pod running at all times? 
 
-Then we must use an [ReplicaSet (RS)](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) object - it's purpose is to  maintain a stable set of Pod replicas running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods.
+Then we must use an [ReplicaSet (RS)](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) object. It's purpose is to  maintain a stable set of Pod replicas running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods.
 
 **Note**: In some older books or documents you might find the old version of a similar object - [ReplicationController (RC)](https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/), it had similar purpose, but did not support [set-base label selectors](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#set-based-requirement) and it is now recommended to use ReplicaSets instead, since it is the next-generation RC.
 
@@ -449,12 +449,12 @@ kubectl get pods
 
 ![kubectl get pods](./images/4%20get%20pods.png)
 
-Here we see three ngix-pods with some random suffixes (e.g. `-2z4ts`) - it means that these Pods were created and named automatically by some other object (higher level of abstraction) such as ReplicaSet.
+Here we see three ngix-pods with some random suffixes (e.g. `-2z4ts`). It means that these Pods were created and named automatically by some other object (higher level of abstraction) such as ReplicaSet.
 
 9. Delete one of the Pods:
 
 ```sh
-kubectl delete po nginx-rs-2z4ts
+kubectl delete pod nginx-rs-2z4ts
 ```
 
 ![delete po nginx-pod-g44](./images/4%20delete%20pod%20nginx-rs.png)
@@ -465,7 +465,7 @@ kubectl get pods
 
 ![get pods 2](./images/4%20get%20pods%202.png)
 
-You can see, that we still have all 3 Pods, but one has been recreated.
+You can see, that we still have all 3 Pods but one has been recreated.
 
 10. Explore the ReplicaSet created:
 
@@ -564,7 +564,7 @@ kubectl get rs nginx-rs -o wide
 
 ### Step 4: Using AWS Load Balancer to access your service in Kubernetes
 
-We have previously accessed the Nginx service through **ClusterIP** and **NodePort**, but there is another service type - [Loadbalancer](https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer). This type of service does not only create a Service object in K8s, but also provisions a real external Load Balancer (e.g. [Elastic Load Balancer - ELB](https://aws.amazon.com/elasticloadbalancing/) in AWS)
+We have previously accessed the Nginx service through **ClusterIP** and **NodePort**, but there is another service type called [Loadbalancer](https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer). This type of service does not only create a Service object in K8s, but also provisions a real external Load Balancer (e.g. [Elastic Load Balancer - ELB](https://aws.amazon.com/elasticloadbalancing/) in AWS).
 
 1. To get the experience of this service type, update your service manifest and use the **LoadBalancer** type. Also, ensure that the selector references the Pods in the replicaset.
 
@@ -735,7 +735,7 @@ cat /etc/nginx/conf.d/default.conf
 
 ![cat /etc/nginx/conf.d/default.conf](./images/6%20cat%20:etc:nginx:conf.d:default.conf.png)
 
-Now, as we have got acquainted with most common Kubernetes workloads to deploy applications.
+Now we have got acquainted with most common Kubernetes workloads to deploy applications.
 
 Deployments are stateless by design. Hence, any data stored inside the Pod's container does not persist when the Pod dies.
 
@@ -814,9 +814,9 @@ kubectl delete pod nginx-deployment-fc79b9898-8mmx5
 
 ![alb browser 2](./images/6%20alb%20browser%202.png)
 
-Storage is a critical part of running containers, and Kubernetes offers some powerful primitives for managing it. 
+Storage is a critical part of running containers and Kubernetes offers some powerful primitives for managing it. 
 
-**Dynamic volume provisioning**, a feature unique to Kubernetes, which allows storage volumes to be created on-demand. Without dynamic provisioning, DevOps engineers must manually make calls to the cloud or storage provider to create new storage volumes, and then create **PersistentVolume** objects to represent them in Kubernetes. 
+**Dynamic volume provisioning**, a feature unique to Kubernetes, which allows storage volumes to be created on-demand. Without dynamic provisioning, DevOps engineers must manually make calls to the cloud or storage provider to create new storage volumes and then create **PersistentVolume** objects to represent them in Kubernetes. 
 
 The dynamic provisioning feature eliminates the need for DevOps to pre-provision storage. Instead, it automatically provisions storage when it is requested by users.
 
