@@ -11,6 +11,7 @@ The goal of these projects is to give hands-on insights the process of building,
 * Nginx
 * MySQL
 * Docker
+* Kubernetes
 * Ansible
 * Terraform
 * Apache
