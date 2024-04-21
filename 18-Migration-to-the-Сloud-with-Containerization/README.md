@@ -1,19 +1,17 @@
 
 # Migration to the Сloud with Containerization
-Until now, you have been using VMs (AWS EC2) in Amazon Virtual Private Cloud (AWS VPC) to deploy your web solutions, and it works well in many cases. You have learned how easy to spin up and configure a new EC2 manually or with such tools as Terraform and Ansible to automate provisioning and configuration. 
+Virtual Machines (i.e. AWS EC2) can been used to deploy applications and web solutions. They are scalable to some extent but if you need to deploy many small applications and some of the applications will require various OS and runtimes of different versions and conflicting dependencies. In such cases, you will need to spin up servers for each group of applications with the exact OS and dependencies requirements.
 
-You have also deployed two different websites on the same VM; this approach is scalable, but to some extent; imagine what if you need to deploy many small applications (it can be web front-end, web-backend, processing jobs, monitoring, logging solutions) and some of the applications will require various OS and runtimes of different versions and conflicting dependencies in such case you would need to spin up serves for each group of applications with the exact OS/runtime/dependencies requirements. 
+When it scales out to tens/hundreds and even thousands of applications (i.e. Microservices), this approach becomes very tedious and challenging to maintain.
 
-When it scales out to tens/hundreds and even thousands of applications (e.g. when we talk of microservice architecture), this approach becomes very tedious and challenging to maintain.
-
-In this project, we will learn how to solve this problem and begin to practice the technology that revolutionized application distribution and deployment back in 2013! We are talking of Containers and simply [Docker](https://en.wikipedia.org/wiki/Docker_(software)). Even though there are other application containerization technologies, Docker is the standard and the default choice for shipping your app in a container!
+This project focuses on how to solve this problem with the use of the  the technology that revolutionized application distribution and deployment back in 2013! We are talking of Containers and simply [Docker](https://en.wikipedia.org/wiki/Docker_(software)). Even though there are other application containerization technologies, Docker is the standard and the default choice for shipping your app in a container!
 
 ## Prerequisites
 A virtual machine (i.e. any cloud provider) or your workstation that will host the Docker containers.
 
 ## Migration to the Сloud with Containerization using Docker
 
-The following steps are taken to migrate to the cloud with containerization using docker
+The following steps are taken to migrate to the cloud with containerization using docker:
 
 ## Step 1: Install Docker and prepare for migration to the Cloud
 
@@ -62,7 +60,7 @@ docker ps
 ## Step 2: MySQL in a Container
 We are migrating the Tooling Web Application (**PHP-based web solution backed by a MySQL database**) from a VM-based solution into a containerized one.
 
-1. Pull MySQL Docker Image from [Docker Hub Registry](https://hub.docker.com/_/mysql). You can download a specific version or opt for the latest release, as seen in the following command:
+1. Pull the MySQL Docker Image from [Docker Hub Registry](https://hub.docker.com/_/mysql). You can download a specific version or opt for the latest release, as seen in the following command:
 
 ```sh
 docker pull mysql/mysql-server:latest
@@ -80,7 +78,7 @@ docker images
 
 ## Step 3: Deploy the MySQL Container to your Docker Engine
 
-1. Once you have the image, move on to deploying a new MySQL container with:
+1. Once you have the image, move on to deploying a new MySQL container.
 
 ```sh
 docker run --name <container_name> -e MYSQL_ROOT_PASSWORD=<my-secret-pw> -d mysql/mysql-server:latest
@@ -146,7 +144,7 @@ export MYSQL_PW=<root-secret-password>
 
 ![export mysql](./images/3%20export%20mysql.png)
 
-3. Then, pull the image and run the container, all in one command like below:
+3. Pull the image and run the container, all in one command like below:
 
 ```sh
 docker run --network tooling_app_network -h mysqlserverhost --name=mysql-server -e MYSQL_ROOT_PASSWORD=$MYSQL_PW  -d mysql/mysql-server:latest 
@@ -516,7 +514,7 @@ http://ip_host_vm:8000
 
 ![create php app repo](./images/9%20create%20php-todo-app%20repo.png)
 
-3. Log into Docker Hub from your VM, input your email address and pssword in the prompt..
+3. Log into Docker Hub from your VM, input your email address and password in the prompt..
 
 ```sh
 docker login
@@ -542,4 +540,4 @@ docker push username/repositoryname:tagname
 
 6. Check your Docker account to confirm it has been pushed suuccessfully
 
-
+![confirmation](./images/9%20docker%20hub%20confirmation.png)
