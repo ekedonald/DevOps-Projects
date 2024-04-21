@@ -1,6 +1,6 @@
 
 # Migration to the Сloud with Containerization
-Virtual Machines (i.e. AWS EC2) can been used to deploy applications and web solutions. They are scalable to some extent but if you need to deploy many small applications and some of the applications will require various OS and runtimes of different versions and conflicting dependencies. In such cases, you will need to spin up servers for each group of applications with the exact OS and dependencies requirements.
+Virtual Machines (i.e. AWS EC2) can be used to deploy applications and web solutions. They are scalable to some extent but if you need to deploy many small applications and some of the applications will require various OS and runtimes of different versions and conflicting dependencies. In such cases, you will need to spin up servers for each group of applications with the exact OS and dependencies requirements.
 
 When it scales out to tens/hundreds and even thousands of applications (i.e. Microservices), this approach becomes very tedious and challenging to maintain.
 
