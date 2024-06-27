@@ -64,7 +64,7 @@ The following steps are taken to lauch an EC2 Instance on AWS:
 
 ### Step 2: Connect To EC2 Using SSH
 
-The follwowing steps are taken to SSH into an EC2 instance:
+The following steps are taken to SSH into an EC2 instance:
 
 * On the EC2 Dashboard, click on the Running Instances tab.
 
