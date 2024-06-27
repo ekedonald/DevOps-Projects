@@ -144,7 +144,7 @@ Before any traffic can be received by the web server, you need to open TCP port 
 
 ![firewall3](./images/4.%20inbound%20rules.png)
 
-Finally, the server can now be accesssed locally and from any IPv4 addres. To check if you can access the server locally in Ubuntu, run the following command:
+Finally, the server can now be accessed locally and from any IPv4 addres. To check if you can access the server locally in Ubuntu, run the following command:
 
 ```bash
 curl http://localhost:80
@@ -192,7 +192,7 @@ This will connect to the MySql server as the administrative database user root. 
 
 ![mysql](./images/8.%20mysql.png)
 
-* Run a security script that comes pre-instaleld with MySql. Thi script removes insecure default settings and lock down access to your database system. Before running the script, you will set a password for the root user, using *mysql_native_password* as the default authentication method. You are defining this user's password as `PassWord.1`
+* Run a security script that comes pre-installed with MySql. Thi script removes insecure default settings and lock down access to your database system. Before running the script, you will set a password for the root user, using *mysql_native_password* as the default authentication method. You are defining this user's password as `PassWord.1`
 
 ```bash
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';
