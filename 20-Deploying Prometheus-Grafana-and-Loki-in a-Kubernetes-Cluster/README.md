@@ -281,20 +281,38 @@ With the Prometheus and Grafana Loki configured as Data Sources, we can visualiz
 
 On your Grafana Server homepage, click on `Open menu` and `Dashboards`.
 
+![open menu, dashboards](./images/7%20open%20menu,%20dashboards.png)
+
 Click on `Create Dashboard`.
 
+![create dashboards](./images/7%20create%20dashboards.png)
+
 Click on `Import dashboard`.
+
+![import dashboard](./images/7%20import%20dashboard.png)
 
 You can [Import Grafana Dashboards](https://grafana.com/grafana/dashboards) to visualize the Kubernetes Cluster.
 
 Search for `K8s` and click on it.
 
+![search k8s](./images/7%20k8s.png)
+
 Click on `Copy ID to clipboard`.
+
+![copy id to clipboard](./images/7%20copy%20id%20to%20clipboard.png)
 
 Go back to the Grafana server, paste the `GUID` and click on `Load`.
 
 Click on the Prometheus tab, select `Prometheus` as the Data source and click on `Import`.
 
-_You now have a visual representation of your K8 cluster_.
+![select prometheus, import](./images/7%20prometheus%20and%20import.png)
+
+You now have a visual representation of your K8 cluster.
+
+![k8s cluster](./images/7%20k8s%20cluster.png)
 
 Repeat the steps above to import more dashboards.
+
+![dashboards 1](./images/7%20dashboard1.png)
+![dashboards 2](./images/7%20dashboard2.png)
+![dashboards 3](./images/7%20dashboard3.png)
