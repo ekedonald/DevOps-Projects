@@ -61,3 +61,5 @@ Before you start, make sure you have the an account on any of the following Clou
 [18. Migration to the Сloud with Containerization](./18-Migration-to-the-Сloud-with-Containerization/)
 
 [19. Deploying Applications Into Kubernetes Cluster](./19-Deploying-Applications-Into-Kubernetes-Cluster/)
+
+[20. Deploying Prometheus, Grafana and Loki into a Kubernetes Cluster](./20-Deploying%20Prometheus-Grafana-and-Loki-in%20a-Kubernetes-Cluster/)
