@@ -2,7 +2,7 @@
 
 This projects shows the steps taken to install and configure monitoring tools. I will be deploying Prometheus for collecting metrics, Loki for logs and Grafana for visualizing the data.
 
-## Prerequisites
+### Prerequisites
 
 * Create a K8 Cluster using [EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-cluster.htmlhttps://docs.aws.amazon.com/eks/latest/userguide/create-cluster.html) or [minikube](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Fx86-64%2Fstable%2Fbinary+download).
 * Install [Helm](https://helm.sh/docs/intro/install/).
@@ -18,11 +18,15 @@ Create a namespace called `Prometheus`.
 kubectl create ns prometheus
 ```
 
+![create bs prometheus](./images/1%20create%20ns%20prometheus.png)
+
 Add the Prometheus Helm chart repository.
 
 ```sh
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 ```
+
+![repo add prometheus-community](./images/1%20repo%20add%20prometheus.png)
 
 Update the local Helm chart repository cache.
 
@@ -30,11 +34,15 @@ Update the local Helm chart repository cache.
 helm repo update
 ```
 
+![repo update](./images/1%20helm%20repo%20update.png)
+
 Install the Prometheus chart in the prometheus namespace.
 
 ```sh
 helm install prometheus prometheus-community/prometheus -n prometheus
 ```
+
+![install prometheus](./images/1%20helm%20install%20prometheus.png)
 
 Verify that Prometheus is running.
 
@@ -42,17 +50,23 @@ Verify that Prometheus is running.
 kubectl get pods -n prometheus
 ```
 
+![get pods](./images/1%20kubectl%20get%20pods%20-n%20prometheus.png)
+
 Get the Prometheus service details.
 
 ```sh
 kubectl get svc -n prometheus
 ```
 
+![get svc prometheus](./images/1%20get%20svc%20prometheus.png)
+
 Change the Service Type of the `Prometheus-Server` service from **ClusterIP** to **NodePort**.
 
 ```sh
 kubectl edit svc/prometheus-server -n prometheus
 ```
+
+![edit svc/prometheus-server](./images/1%20edit%20prom-server.png)
 
 ## Step 2: Access the Prometheus server from a Web Browser
 
