@@ -165,6 +165,8 @@ Run the following command to get the value of the NodePort:
 kubectl get svc/loki-grafana-loki-gateway -n loki
 ```
 
+![get svc/loki](./images/3%20get%20svc:loki-gateway.png)
+
 ## Step 4: Installing Grafana
 
 Create a namespace called `grafana`.
@@ -173,11 +175,15 @@ Create a namespace called `grafana`.
 kubectl create ns grafana
 ```
 
+![create ns grafana](./images/4%20create%20ns%20grafana.png)
+
 Add the Grafana Helm chart repository.
 
 ```sh
 helm repo add grafana https://grafana.github.io/helm-charts
 ```
+
+![repo add grafana](./images/4%20repo%20add%20grafana.png)
 
 Update the local Helm chart repository cache.
 
@@ -185,12 +191,15 @@ Update the local Helm chart repository cache.
 helm repo update
 ```
 
+![repo update](./images/4%20repo%20update.png)
+
 Install the Grafana chart in the Grafana namespace.
 
 ```sh
 helm install grafana grafana/grafana -n grafana
 ```
 
+![install grafana](./images/4%20install%20grafana.png)
 _**Note**: Copy and run the highlighted command shown above to get the default of the `password`. The username: `admin`, these will be used to login to *Grafana*._
 
 Verify that Grafana is running.
@@ -199,17 +208,23 @@ Verify that Grafana is running.
 kubectl get pods -n grafana
 ```
 
+![get pods grafana](./images/4%20get%20pods%20-n%20grafana.png)
+
 Get the Grafana service details.
 
 ```sh
 kubectl get svc -n grafana
 ```
 
+![get svc grafana](./images/4%20get%20svc%20grafana.png)
+
 Change the Service Type of the `grafana` service from **ClusterIP** to **NodePort**.
 
 ```sh
 kubectl edit svc/grafana -n grafana
 ```
+
+![edit svc/grafana](./images/4%20edit%20svc:grafan.png)
 
 ## Step 5: Access the Grafana server from a Web Browser
 
