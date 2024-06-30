@@ -234,11 +234,15 @@ The `grafana` server now has a NodePort which permits access from the internet. 
 kubectl get svc -n grafana
 ```
 
+![get svc grafana](./images/5%20get%20svc%20grafana.png)
+
 Get the IP address of the minikube cluster.
 
 ```sh
 minikube ip
 ```
+
+![minikube ip](./images/2%20minikube%20ip.png)
 
 Go to your web browser and paste the following url:
 
@@ -246,17 +250,24 @@ Go to your web browser and paste the following url:
 http://<minikube_ip>:<grafana-nodeport>
 ```
 
+![grafana url](./images/5%20grafana%20url.png)
 _Paste the password generated from **Step 4** and the username stated._
 
 ## Step 6: Configuring Prometheus and Loki as Data Sources to Grafana
 
 On the Grafana webpage, click on the `Open menu` tab then click on the `Connections` dropdown and `Add New Connections`.
 
+![open menu, connections, add new connections](./images/6%20menu,%20connections,%20add%20new.png)
+
 Search for the `Prometheus` Data Source and click on it.
+
+![prometheus](./images/6%20search%20prometheus.png)
 
 Click on `Add new data source`.
 
 Paste the `http://<minikube_ip>:<prometheus-server-nodeport>` into the `Prometheus server URL` box.
+
+![paste url](./images/6%20paste%20url.png)
 
 Scroll to the bottom and click on `Save & test`.
 
