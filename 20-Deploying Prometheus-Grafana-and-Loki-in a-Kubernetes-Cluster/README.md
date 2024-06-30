@@ -109,11 +109,15 @@ Create a namespace called `loki`.
 kubectl create ns loki
 ```
 
+![create ns loki](./images/3%20create%20ns%20loki.png)
+
 Add the Bitnami Helm chart repository.
 
 ```sh
 helm repo add bitnami https://charts.bitnami.com/bitnami
 ```
+
+![repo add bitnami](./images/3%20repo%20add%20bitnami.png)
 
 Update the local Helm chart repository cache.
 
@@ -121,11 +125,15 @@ Update the local Helm chart repository cache.
 helm repo update
 ```
 
+![repo update](./images/3%20repo%20update.png)
+
 Install the Grafana Loki chart in the loki namespace.
 
 ```sh
 helm install loki bitnami/grafana-loki -n loki
 ```
+
+![install loki](./images/3%20install%20loki.png)
 
 Verify that Grafana Loki is running.
 
@@ -133,17 +141,23 @@ Verify that Grafana Loki is running.
 kubectl get pods -n loki
 ```
 
+![get pods loki](./images/3%20get%20pods%20loki.png)
+
 Get the Grafana Loki service details.
 
 ```sh
 kubectl get svc -n loki
 ```
 
+![get svc loki](./images/3%20get%20svc%20loki.png)
+
 Change the Service Type of the `loki-grafana-loki-gateway` service from **ClusterIP** to **NodePort**.
 
 ```sh
 kubectl edit svc/loki-grafana-loki-gateway -n loki
 ```
+
+![edit svc/loki-grafana-loki-gateway](./images/3%20edit%20svc:loki.png)
 
 Run the following command to get the value of the NodePort:
 
