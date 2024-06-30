@@ -76,11 +76,15 @@ The `Prometheus-Server` service now has a NodePort which permits access from the
 kubectl get svc/prometheus-server -n prometheus
 ```
 
+![get svc/prometheus-server](./images/2%20get%20svc:prom-server.png)
+
 Get the IP address of the minikube cluster.
 
 ```sh
 minikube ip
 ```
+
+![minikube ip](./images/2%20minikube%20ip.png)
 
 Go to your web browser and paste the following url:
 
@@ -88,8 +92,13 @@ Go to your web browser and paste the following url:
 http://<minikube_ip>:<prometheus-server-nodeport>
 ```
 
+![prom url](./images/2%20http%20minikube-ip:prom-nodeport.png)
+
 Verify if Prometheus can access the components of the Kubernetes Cluster by clicking on `Status` and `Targets`.
 
+![status](./images/2%20promserver%201.png)
+
+![targets](./images/2%20promserver%202.png)
 _You can see that the components of the Kubernetes Cluster can be accessed by Prometheus_.
 
 ## Step 3: Installing Grafana Loki
