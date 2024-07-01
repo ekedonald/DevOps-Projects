@@ -271,6 +271,8 @@ Paste the `http://<minikube_ip>:<prometheus-server-nodeport>` into the `Promethe
 
 Scroll to the bottom and click on `Save & test`.
 
+![save and test](./images/5%20save%20n%20test.png)
+
 _**Note**: You will see a prompt that shows you have **Successfully queried the Prometheus API**_.
 
 Repeat the same procedure to add **Grafana Loki** as a Data source.
@@ -302,6 +304,8 @@ Click on `Copy ID to clipboard`.
 ![copy id to clipboard](./images/7%20copy%20id%20to%20clipboard.png)
 
 Go back to the Grafana server, paste the `GUID` and click on `Load`.
+
+![guid and load](./images/7%20paste%20guid%20n%20load.png)
 
 Click on the Prometheus tab, select `Prometheus` as the Data source and click on `Import`.
 
@@ -345,6 +349,8 @@ Upgrade the Prometheus Helm release with the `prometheus.yaml` configuration.
 helm upgrade prometheus prometheus-community/prometheus -f prometheus.yaml -n prometheus
 ```
 
+![helm upgrade](./images/8%20helm%20upgrade.png)
+
 _**Note**: The NodePort of the Prometheus-Server changes after upgrading the Helm release_.
 
 Go your web browser and access the Prometheus-Server with the new NodePort and click on Alert.
@@ -353,14 +359,17 @@ Go your web browser and access the Prometheus-Server with the new NodePort and c
 http://<minikube_ip>:<new-prometheus-server-nodeport>
 ```
 
-![prometheus alert rule browser]
-
+![prometheus alert rule browser](./images/8%20prom%20alert.png)
 _You will see that Prometheus is using the alert rule_.
 
 ## Step 9: Examining and Visualizing the `etcd` Pod Log Entries with Loki
 
 Access the Grafana server using your browser, click on `Open menu` and `Explore`.
 
+![open menu and explore](./images/9%20open%20menu%20n%20explore.png)
+
 Click on `Builder`, select `Pod` and `etcd-minikube` as the **label filters** respectively then click on `Run query`.
+
+![builder and pod](./images/9%20builder%20pod%20etcd.png)
 
 _The query displays the **Log Volume** and **Logs** of the `etcd-minikube` pod within an hour_.
