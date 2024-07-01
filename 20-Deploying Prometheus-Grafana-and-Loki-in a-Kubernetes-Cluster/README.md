@@ -340,6 +340,7 @@ serverFiles:
         annotations:
           summary: High error rate on {{ $labels.instance }}
           description: "The rate of HTTP 500 errors is above the threshold"
+EOF
 ```
 _In the configuration above, an alert named **HighErrorRate** is defined. It triggers when the **HTTP 500 errors exceed 10 errors per second over a 5 minute window**. The alert remains active for at least 1 minute_.
 
