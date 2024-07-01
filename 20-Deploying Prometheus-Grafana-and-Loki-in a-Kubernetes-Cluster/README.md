@@ -316,3 +316,51 @@ Repeat the steps above to import more dashboards.
 ![dashboards 1](./images/7%20dashboard1.png)
 ![dashboards 2](./images/7%20dashboard2.png)
 ![dashboards 3](./images/7%20dashboard3.png)
+
+## Step 8: Setting Up Alerts on Prometheus
+
+Create a `prometheus.yaml` file in your directory and add an **alert rule**.
+
+```sh
+cat <<EOF | tee prometheus.yaml
+serverFiles:
+  alerting_rules.yml:
+    groups:
+    - name: example-group
+      rules:
+      - alert: HighErrorRate
+        expr: sum(rate(http_server_errors_total{status="500"}[5m])) > 10
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: High error rate on {{ $labels.instance }}
+          description: "The rate of HTTP 500 errors is above the threshold"
+```
+_In the configuration above, an alert named **HighErrorRate** is defined. It triggers when the **HTTP 500 errors exceed 10 errors per second over a 5 minute window**. The alert remains active for at least 1 minute_.
+
+Upgrade the Prometheus Helm release with the `prometheus.yaml` configuration.
+
+```sh
+helm upgrade prometheus prometheus-community/prometheus -f prometheus.yaml -n prometheus
+```
+
+_**Note**: The NodePort of the Prometheus-Server changes after upgrading the Helm release_.
+
+Go your web browser and access the Prometheus-Server with the new NodePort and click on Alert.
+
+```sh
+http://<minikube_ip>:<new-prometheus-server-nodeport>
+```
+
+![prometheus alert rule browser]
+
+_You will see that Prometheus is using the alert rule_.
+
+## Step 9: Examining and Visualizing the `etcd` Pod Log Entries with Loki
+
+Access the Grafana server using your browser, click on `Open menu` and `Explore`.
+
+Click on `Builder`, select `Pod` and `etcd-minikube` as the **label filters** respectively then click on `Run query`.
+
+_The query displays the **Log Volume** and **Logs** of the `etcd-minikube` pod within an hour_.
