@@ -15,6 +15,10 @@ The goal of these projects is to give hands-on insights the process of building,
 * Ansible
 * Terraform
 * Apache
+* Helm
+* Prometheus
+* Grafana
+* Loki
 
 ## Prerequisites
 Before you start, make sure you have the an account on any of the following Cloud Providers:
