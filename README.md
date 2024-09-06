@@ -1,7 +1,7 @@
 ![DevOps Cover](devops.jpeg)
 
 # DevOps Projects
-This repository contains all the information and resources required to set up various DevOps Projects to meet different clients requirements. 
+This repository contains all the information and resources required to set up various DevOps Projects for different use-cases. 
 
 These projects give insights on the process of building, testing, and deploying software applications to production, thus reducing the time and effort required for manual intervention.
 
